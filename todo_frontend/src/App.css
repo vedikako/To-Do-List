@@ -1,0 +1,165 @@
+/* Apply box-sizing globally */
+* {
+  box-sizing: border-box;
+}
+
+/* Basic body styling for dark theme */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #E0E0E0;  /* Light text color for readability */
+  margin: 0;
+  height: 100vh;  /* Ensure body fills the full height of the viewport */
+}
+
+/* Centering the content horizontally and vertically */
+.container {
+  display: flex;
+  justify-content: center;  /* Horizontally center the content */
+  align-items: center;      /* Vertically center the content */
+  height: 100vh;            /* Full viewport height */
+}
+
+/* Styling for the "window" div */
+.window {
+  background-color: #1E1E1E;  /* Dark gray background for the window */
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;         /* Control the maximum width */
+  box-shadow: 0px 4px 16px rgba(255, 255, 255, 0.2); /* White shadow with transparency */
+  border: 1px solid white;  /* White border around the window */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;  /* Use flexbox to control inner layout */
+  flex-direction: column; /* Arrange child elements in a column */
+  align-items: center; /* Center align children horizontally */
+  justify-content: flex-start; /* Align children at the top */
+}
+
+/* Hover effect for the window */
+.window:hover {
+  transform: translateY(-10px); /* Slightly move up */
+  box-shadow: 0px 8px 24px rgba(255, 255, 255, 0.4); /* Stronger white shadow on hover */
+}
+
+/* Header styling */
+.header {
+  width: 100%;
+  background-color: #333333;  /* Darker background */
+  color: #fff; /* Cyan color for the header text */
+  padding: 15px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;  /* Rounded top corners */
+  margin-top:30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Create form styling */
+.create-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  gap: 10px; /* Add some space between the input and button */
+}
+
+input[type='text'] {
+  flex: 1;
+  padding: 15px;
+  margin: 5px 0;
+  border-radius: 7px;
+  background-color: #333333;  /* Darker background for input fields */
+  color: #E0E0E0;  /* Light text color */
+  border: 1px solid white;  /* White border around input fields */
+  min-width: 400px;
+}
+
+/* Button styling */
+button {
+  padding: 15px;
+  margin-left: 10px;
+  border-radius: 7px;
+  color: white;
+  background-color: #00BFFF;  /* Bright cyan for buttons */
+  border: 1px solid white;  /* White border around buttons */
+  cursor: pointer;
+  min-width: 80px;
+}
+
+button:hover {
+  background-color: #1E90FF;  /* Electric blue on hover */
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4); /* White shadow on hover */
+}
+
+/* Task styling */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2C2C2C;  /* Dark gray background for tasks */
+  color: #E0E0E0;  /* Light gray text */
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.3);  /* Subtle white shadow */
+  border: 1px solid white;  /* White border around tasks */
+}
+
+/* Checkbox and icon styling */
+.task .checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.task .icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #32CD32;  /* Lime green for icons */
+  margin-left: 10px;
+}
+
+.task p {
+  margin-left: 10px;
+}
+
+.through {
+  text-decoration: line-through;
+}
+
+.normal {
+  text-decoration: none;
+}
+
+/* Scrollable task list */
+.task-list {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 600px) {
+  .create-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button {
+    margin-top: 10px;
+    background-color: #00BFFF;  /* Bright cyan */
+    height: 30px;
+    min-width: 350px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .task {
+    align-items: stretch;
+  }
+}
